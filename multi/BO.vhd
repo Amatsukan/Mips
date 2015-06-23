@@ -1,0 +1,110 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity BO is
+	port(
+		clock, reset: in std_logic;
+		opcode: out std_logic_vector(5 downto 0);
+		PCEscCond, PCEsc, IouD, LerMem,
+		EscMem, MemParaReg, IREsc,
+		RegDst, EscReg, ULAFonteA: in std_logic;
+		ULAFonteB, ULAOp, FontePC: in std_logic_vector(1 downto 0)
+	);
+end;
+
+architecture estrutural of BO is
+	component register_n_bits is    
+		generic(width: integer := 8);
+		port( 
+			clk, reset, writeReg: in std_logic;
+			d: in std_logic_vector(width-1 downto 0);
+			q: out std_logic_vector(width-1 downto 0)
+		);
+	end component;
+	
+	component mux2x1nbits is
+		generic(width: integer := 8);
+		port(
+			inpt0: in std_logic_vector(width-1 downto 0);
+			inpt1: in std_logic_vector(width-1 downto 0);
+			sel: in std_logic;
+			outp: out std_logic_vector(width-1 downto 0)
+		);
+	end component;
+	
+	component memory_BRAM IS
+		PORT(
+			address	: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+			clock		: IN STD_LOGIC  := '1';
+			data		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+			wren		: IN STD_LOGIC ;
+			q		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+		);
+	END component;
+	
+	signal or2pc: std_logic;
+	signal mux2pc, pcout, ulaout, mux2mem, memout, regBout,
+			 instrucao, regDadoOut, muxDadoEscOut: std_logic_vector(31 downto 0);
+	signal muxRegEscOut: std_logic_vector(4 downto 0);
+begin
+
+	PC: register_n_bits generic map(width=>32) 
+			port map( 
+			clk=>clock, reset=>reset, writeReg=>or2pc,
+			d=>mux2pc, q=>pcout);
+			
+	MuxMem: mux2x1nbits generic map(width=>32)
+			port map(
+			inpt0=>pcout, inpt1=>ulaout, sel=>IouD,
+			outp=>mux2mem);
+	
+	Memoria: memory_BRAM PORT map (
+			address=>mux2mem(7 downto 0), 
+			clock=>clock,
+			data=>regBout,
+			wren=>escMem, 
+			q=>memOut);
+			
+	RegInst: register_n_bits generic map(width=>32)
+			port map( 
+			clk=>clock, reset=>reset, writeReg=>IREsc,
+			d=>memOut, q=>instrucao	);
+			
+	RegDados: register_n_bits generic map(width=>32)
+			port map( 
+			clk=>clock, reset=>reset, writeReg=>'1', 
+			d=>memout, q=>regDadoOut);
+
+	MuxRegEsc: mux2x1nbits generic map(width=>5)
+			port map(
+			inpt0=>instrucao(20 downto 16),
+			inpt1=>instrucao(15 downto 11),
+			sel=>RegDst,
+			outp=>muxRegEscOut);
+			
+	MuxDadoEsc: mux2x1nbits generic map (width=>32)
+			port map(
+			inpt0=>ULAout,
+			inpt1=>regDadoOut,
+			sel=>MemParaReg,
+			outp=>muxDadoEscOut);
+end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

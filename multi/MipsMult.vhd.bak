@@ -1,0 +1,14 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+entity MipsMult is
+port(
+	a,c : in std_logic;
+	b : out std_logic
+);
+end entity;
+
+architecture MipsM of MipsMult is 
+begin
+	b<=a or c;
+end architecture;

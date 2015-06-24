@@ -54,7 +54,6 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VHDL_FILE BO.vhd
 set_global_assignment -name VHDL_FILE ALU.vhd
-set_global_assignment -name VHDL_FILE mux21.vhd
 set_global_assignment -name VHDL_FILE signalExtend.vhd
 set_global_assignment -name VHDL_FILE shiftLeft2.vhd
 set_global_assignment -name VHDL_FILE register_n_bits.vhd
@@ -68,4 +67,5 @@ set_global_assignment -name VHDL_FILE registerBank.vhd
 set_global_assignment -name VHDL_FILE adder_n_bits.vhd
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VHDL_FILE mux3x1.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MipsMult
-Tue Jun 23 19:16:51 2015
+Tue Jun 23 21:04:03 2015
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -14,25 +14,41 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Source assignments for BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component|altsyncram_0rj1:auto_generated
- 11. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:PC
- 12. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:MuxMem
- 13. Parameter Settings for User Entity Instance: BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component
- 14. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegInst
- 15. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegDados
- 16. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:MuxRegEsc
- 17. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:MuxDadoEsc
- 18. altsyncram Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "BO:Bop|mux2x1nbits:MuxDadoEsc"
- 20. Port Connectivity Checks: "BO:Bop|mux2x1nbits:MuxRegEsc"
- 21. Port Connectivity Checks: "BO:Bop|register_n_bits:RegDados"
- 22. Port Connectivity Checks: "BO:Bop|register_n_bits:RegInst"
- 23. Port Connectivity Checks: "BO:Bop|mux2x1nbits:MuxMem"
- 24. Port Connectivity Checks: "BO:Bop"
- 25. Post-Synthesis Netlist Statistics for Top Partition
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Source assignments for BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component|altsyncram_0rj1:auto_generated
+ 12. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:PC
+ 13. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:MuxMem
+ 14. Parameter Settings for User Entity Instance: BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component
+ 15. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegInst
+ 16. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegDados
+ 17. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:MuxRegEsc
+ 18. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:MuxDadoEsc
+ 19. Parameter Settings for User Entity Instance: BO:Bop|registerBank:BancoDeRegs
+ 20. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegA
+ 21. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegB
+ 22. Parameter Settings for User Entity Instance: BO:Bop|signalExtend:extSinal
+ 23. Parameter Settings for User Entity Instance: BO:Bop|shiftLeft2:desExt
+ 24. Parameter Settings for User Entity Instance: BO:Bop|shiftLeft2:desPC
+ 25. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:mux21ULA
+ 26. Parameter Settings for User Entity Instance: BO:Bop|mux4x1nbits:mux41Ula
+ 27. Parameter Settings for User Entity Instance: BO:Bop|ALU:ULA
+ 28. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:UlaReg
+ 29. Parameter Settings for User Entity Instance: BO:Bop|Mux3x1nbits:mux31pc
+ 30. altsyncram Parameter Settings by Entity Instance
+ 31. Port Connectivity Checks: "BO:Bop|Mux3x1nbits:mux31pc"
+ 32. Port Connectivity Checks: "BO:Bop|register_n_bits:UlaReg"
+ 33. Port Connectivity Checks: "BO:Bop|mux4x1nbits:mux41Ula"
+ 34. Port Connectivity Checks: "BO:Bop|shiftLeft2:desPC"
+ 35. Port Connectivity Checks: "BO:Bop|register_n_bits:RegB"
+ 36. Port Connectivity Checks: "BO:Bop|register_n_bits:RegA"
+ 37. Port Connectivity Checks: "BO:Bop|register_n_bits:RegDados"
+ 38. Port Connectivity Checks: "BO:Bop|register_n_bits:RegInst"
+ 39. Port Connectivity Checks: "BO:Bop|mux2x1nbits:MuxMem"
+ 40. Port Connectivity Checks: "BO:Bop"
+ 41. Post-Synthesis Netlist Statistics for Top Partition
+ 42. Elapsed Time Per Partition
+ 43. Analysis & Synthesis Messages
 
 
 
@@ -59,7 +75,7 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jun 23 19:16:51 2015      ;
+; Analysis & Synthesis Status     ; Successful - Tue Jun 23 21:04:02 2015      ;
 ; Quartus II 64-Bit Version       ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                   ; MipsMult                                   ;
 ; Top-level Entity Name           ; MipsMult                                   ;
@@ -184,10 +200,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                 ; Library ;
 +----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
 ; BO.vhd                           ; yes             ; User VHDL File                         ; /home/jake/Mips32/multi/BO.vhd                                               ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File                         ; /home/jake/Mips32/multi/ALU.vhd                                              ;         ;
+; signalExtend.vhd                 ; yes             ; User VHDL File                         ; /home/jake/Mips32/multi/signalExtend.vhd                                     ;         ;
+; shiftLeft2.vhd                   ; yes             ; User VHDL File                         ; /home/jake/Mips32/multi/shiftLeft2.vhd                                       ;         ;
 ; register_n_bits.vhd              ; yes             ; User VHDL File                         ; /home/jake/Mips32/multi/register_n_bits.vhd                                  ;         ;
+; ALUcontrol.vhd                   ; yes             ; User VHDL File                         ; /home/jake/Mips32/multi/ALUcontrol.vhd                                       ;         ;
+; mux4x1nbits.vhd                  ; yes             ; User VHDL File                         ; /home/jake/Mips32/multi/mux4x1nbits.vhd                                      ;         ;
 ; mux2x1nbits.vhd                  ; yes             ; User VHDL File                         ; /home/jake/Mips32/multi/mux2x1nbits.vhd                                      ;         ;
 ; MipsMult.vhd                     ; yes             ; User VHDL File                         ; /home/jake/Mips32/multi/MipsMult.vhd                                         ;         ;
 ; memory_BRAM.vhd                  ; yes             ; User Wizard-Generated File             ; /home/jake/Mips32/multi/memory_BRAM.vhd                                      ;         ;
+; registerBank.vhd                 ; yes             ; User VHDL File                         ; /home/jake/Mips32/multi/registerBank.vhd                                     ;         ;
+; mux3x1.vhd                       ; yes             ; User VHDL File                         ; /home/jake/Mips32/multi/mux3x1.vhd                                           ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                           ; /home/jake/altera/15.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /home/jake/altera/15.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                           ; /home/jake/altera/15.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
@@ -239,14 +262,1264 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; BO:Bop|register_n_bits:PC|state[0..7] ; Lost fanout        ;
-; Total Number of Removed Registers = 8 ;                    ;
-+---------------------------------------+--------------------+
++------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                     ;
++---------------------------------------------------+--------------------+
+; Register name                                     ; Reason for Removal ;
++---------------------------------------------------+--------------------+
+; BO:Bop|register_n_bits:UlaReg|state[0..31]        ; Lost fanout        ;
+; BO:Bop|register_n_bits:RegB|state[0..31]          ; Lost fanout        ;
+; BO:Bop|register_n_bits:RegA|state[0..31]          ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][31]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][30]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][29]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][28]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][27]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][26]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][25]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][24]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][23]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][22]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][21]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][20]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][19]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][18]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][17]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][16]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][15]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][14]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][13]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][12]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][11]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][10]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][9]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][8]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][7]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][6]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][5]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][4]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][3]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][2]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][1]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[0][0]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][31]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][30]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][29]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][28]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][27]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][26]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][25]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][24]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][23]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][22]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][21]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][20]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][19]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][18]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][17]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][16]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][15]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][14]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][13]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][12]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][11]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][10]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][9]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][8]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][7]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][6]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][5]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][4]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][3]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][2]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][1]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[1][0]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][31]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][30]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][29]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][28]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][27]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][26]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][25]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][24]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][23]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][22]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][21]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][20]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][19]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][18]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][17]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][16]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][15]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][14]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][13]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][12]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][11]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][10]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][9]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][8]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][7]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][6]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][5]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][4]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][3]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][2]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][1]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[2][0]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][31]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][30]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][29]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][28]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][27]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][26]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][25]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][24]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][23]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][22]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][21]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][20]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][19]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][18]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][17]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][16]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][15]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][14]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][13]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][12]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][11]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][10]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][9]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][8]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][7]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][6]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][5]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][4]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][3]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][2]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][1]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[3][0]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][31]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][30]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][29]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][28]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][27]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][26]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][25]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][24]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][23]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][22]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][21]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][20]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][19]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][18]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][17]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][16]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][15]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][14]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][13]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][12]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][11]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][10]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][9]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][8]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][7]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][6]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][5]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][4]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][3]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][2]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][1]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[4][0]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][31]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][30]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][29]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][28]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][27]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][26]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][25]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][24]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][23]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][22]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][21]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][20]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][19]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][18]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][17]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][16]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][15]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][14]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][13]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][12]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][11]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][10]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][9]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][8]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][7]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][6]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][5]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][4]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][3]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][2]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][1]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[5][0]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][31]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][30]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][29]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][28]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][27]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][26]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][25]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][24]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][23]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][22]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][21]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][20]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][19]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][18]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][17]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][16]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][15]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][14]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][13]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][12]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][11]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][10]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][9]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][8]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][7]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][6]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][5]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][4]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][3]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][2]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][1]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[6][0]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][31]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][30]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][29]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][28]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][27]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][26]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][25]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][24]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][23]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][22]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][21]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][20]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][19]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][18]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][17]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][16]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][15]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][14]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][13]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][12]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][11]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][10]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][9]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][8]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][7]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][6]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][5]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][4]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][3]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][2]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][1]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[7][0]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][31]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][30]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][29]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][28]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][27]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][26]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][25]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][24]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][23]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][22]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][21]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][20]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][19]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][18]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][17]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][16]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][15]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][14]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][13]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][12]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][11]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][10]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][9]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][8]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][7]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][6]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][5]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][4]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][3]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][2]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][1]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[8][0]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][31]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][30]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][29]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][28]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][27]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][26]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][25]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][24]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][23]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][22]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][21]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][20]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][19]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][18]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][17]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][16]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][15]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][14]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][13]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][12]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][11]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][10]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][9]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][8]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][7]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][6]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][5]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][4]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][3]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][2]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][1]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[9][0]   ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[10][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[11][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[12][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[13][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[14][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[15][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[16][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[17][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[18][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[19][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[20][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[21][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[22][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[23][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[24][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[25][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[26][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[27][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[28][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[29][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[30][0]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][31] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][30] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][29] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][28] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][27] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][26] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][25] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][24] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][23] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][22] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][21] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][20] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][19] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][18] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][17] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][16] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][15] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][14] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][13] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][12] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][11] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][10] ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][9]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][8]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][7]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][6]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][5]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][4]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][3]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][2]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][1]  ; Lost fanout        ;
+; BO:Bop|registerBank:BancoDeRegs|registers[31][0]  ; Lost fanout        ;
+; BO:Bop|register_n_bits:RegDados|state[0..31]      ; Lost fanout        ;
+; BO:Bop|register_n_bits:RegInst|state[0..25]       ; Lost fanout        ;
+; BO:Bop|register_n_bits:PC|state[0..31]            ; Lost fanout        ;
+; Total Number of Removed Registers = 1210          ;                    ;
++---------------------------------------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                        ;
++-----------------------------------------+--------------------+-------------------------------------------------------------------------------------+
+; Register name                           ; Reason for Removal ; Registers Removed due to This Register                                              ;
++-----------------------------------------+--------------------+-------------------------------------------------------------------------------------+
+; BO:Bop|register_n_bits:UlaReg|state[31] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[31], BO:Bop|register_n_bits:RegA|state[31],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][31],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][31],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][31],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][31],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[31],                                          ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegInst|state[25], BO:Bop|register_n_bits:RegInst|state[24], ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegInst|state[23], BO:Bop|register_n_bits:RegInst|state[22], ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegInst|state[21], BO:Bop|register_n_bits:RegInst|state[20], ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegInst|state[19], BO:Bop|register_n_bits:RegInst|state[18], ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegInst|state[17], BO:Bop|register_n_bits:RegInst|state[16], ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegInst|state[15], BO:Bop|register_n_bits:RegInst|state[3],  ;
+;                                         ;                    ; BO:Bop|register_n_bits:PC|state[31]                                                 ;
+; BO:Bop|register_n_bits:UlaReg|state[7]  ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[7], BO:Bop|register_n_bits:RegA|state[7],         ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][7],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][7],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][7],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][7],                                    ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[7], BO:Bop|register_n_bits:RegInst|state[7],  ;
+;                                         ;                    ; BO:Bop|register_n_bits:PC|state[7]                                                  ;
+; BO:Bop|register_n_bits:UlaReg|state[14] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[14], BO:Bop|register_n_bits:RegA|state[14],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][14],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][14],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][14],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][14],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[14],                                          ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegInst|state[14], BO:Bop|register_n_bits:PC|state[14]       ;
+; BO:Bop|register_n_bits:UlaReg|state[13] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[13], BO:Bop|register_n_bits:RegA|state[13],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][13],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][13],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][13],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][13],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[13],                                          ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegInst|state[13], BO:Bop|register_n_bits:PC|state[13]       ;
+; BO:Bop|register_n_bits:UlaReg|state[12] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[12], BO:Bop|register_n_bits:RegA|state[12],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][12],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][12],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][12],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][12],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[12],                                          ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegInst|state[12], BO:Bop|register_n_bits:PC|state[12]       ;
+; BO:Bop|register_n_bits:UlaReg|state[11] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[11], BO:Bop|register_n_bits:RegA|state[11],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][11],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][11],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][11],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][11],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[11],                                          ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegInst|state[11], BO:Bop|register_n_bits:PC|state[11]       ;
+; BO:Bop|register_n_bits:UlaReg|state[10] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[10], BO:Bop|register_n_bits:RegA|state[10],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][10],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][10],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][10],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][10],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[10],                                          ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegInst|state[10], BO:Bop|register_n_bits:PC|state[10]       ;
+; BO:Bop|register_n_bits:UlaReg|state[9]  ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[9], BO:Bop|register_n_bits:RegA|state[9],         ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][9],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][9],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][9],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][9],                                    ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[9], BO:Bop|register_n_bits:RegInst|state[9],  ;
+;                                         ;                    ; BO:Bop|register_n_bits:PC|state[9]                                                  ;
+; BO:Bop|register_n_bits:UlaReg|state[8]  ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[8], BO:Bop|register_n_bits:RegA|state[8],         ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][8],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][8],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][8],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][8],                                    ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[8], BO:Bop|register_n_bits:RegInst|state[8],  ;
+;                                         ;                    ; BO:Bop|register_n_bits:PC|state[8]                                                  ;
+; BO:Bop|register_n_bits:UlaReg|state[6]  ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[6], BO:Bop|register_n_bits:RegA|state[6],         ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][6],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][6],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][6],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][6],                                    ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[6], BO:Bop|register_n_bits:RegInst|state[6],  ;
+;                                         ;                    ; BO:Bop|register_n_bits:PC|state[6]                                                  ;
+; BO:Bop|register_n_bits:UlaReg|state[5]  ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[5], BO:Bop|register_n_bits:RegA|state[5],         ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][5],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][5],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][5],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][5],                                    ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[5], BO:Bop|register_n_bits:RegInst|state[5],  ;
+;                                         ;                    ; BO:Bop|register_n_bits:PC|state[5]                                                  ;
+; BO:Bop|register_n_bits:UlaReg|state[4]  ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[4], BO:Bop|register_n_bits:RegA|state[4],         ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][4],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][4],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][4],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][4],                                    ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[4], BO:Bop|register_n_bits:RegInst|state[4],  ;
+;                                         ;                    ; BO:Bop|register_n_bits:PC|state[4]                                                  ;
+; BO:Bop|register_n_bits:UlaReg|state[2]  ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[2], BO:Bop|register_n_bits:RegA|state[2],         ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][2],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][2],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][2],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][2],                                    ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[2], BO:Bop|register_n_bits:RegInst|state[2],  ;
+;                                         ;                    ; BO:Bop|register_n_bits:PC|state[2]                                                  ;
+; BO:Bop|register_n_bits:UlaReg|state[1]  ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[1], BO:Bop|register_n_bits:RegA|state[1],         ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][1],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][1],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][1],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][1],                                    ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[1], BO:Bop|register_n_bits:RegInst|state[1],  ;
+;                                         ;                    ; BO:Bop|register_n_bits:PC|state[1]                                                  ;
+; BO:Bop|register_n_bits:UlaReg|state[0]  ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[0], BO:Bop|register_n_bits:RegA|state[0],         ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][0],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][0],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][0],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][0],                                    ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[0], BO:Bop|register_n_bits:RegInst|state[0],  ;
+;                                         ;                    ; BO:Bop|register_n_bits:PC|state[0]                                                  ;
+; BO:Bop|register_n_bits:UlaReg|state[15] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[15], BO:Bop|register_n_bits:RegA|state[15],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][15],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][15],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][15],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][15],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[15], BO:Bop|register_n_bits:PC|state[15]      ;
+; BO:Bop|register_n_bits:UlaReg|state[3]  ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[3], BO:Bop|register_n_bits:RegA|state[3],         ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][3],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][3],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][3],                                    ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][3],                                    ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[3], BO:Bop|register_n_bits:PC|state[3]        ;
+; BO:Bop|register_n_bits:UlaReg|state[16] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[16], BO:Bop|register_n_bits:RegA|state[16],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][16],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][16],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][16],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][16],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[16], BO:Bop|register_n_bits:PC|state[16]      ;
+; BO:Bop|register_n_bits:UlaReg|state[17] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[17], BO:Bop|register_n_bits:RegA|state[17],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][17],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][17],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][17],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][17],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[17], BO:Bop|register_n_bits:PC|state[17]      ;
+; BO:Bop|register_n_bits:UlaReg|state[18] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[18], BO:Bop|register_n_bits:RegA|state[18],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][18],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][18],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][18],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][18],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[18], BO:Bop|register_n_bits:PC|state[18]      ;
+; BO:Bop|register_n_bits:UlaReg|state[19] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[19], BO:Bop|register_n_bits:RegA|state[19],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][19],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][19],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][19],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][19],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[19], BO:Bop|register_n_bits:PC|state[19]      ;
+; BO:Bop|register_n_bits:UlaReg|state[20] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[20], BO:Bop|register_n_bits:RegA|state[20],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][20],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][20],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][20],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][20],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[20], BO:Bop|register_n_bits:PC|state[20]      ;
+; BO:Bop|register_n_bits:UlaReg|state[21] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[21], BO:Bop|register_n_bits:RegA|state[21],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][21],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][21],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][21],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][21],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[21], BO:Bop|register_n_bits:PC|state[21]      ;
+; BO:Bop|register_n_bits:UlaReg|state[22] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[22], BO:Bop|register_n_bits:RegA|state[22],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][22],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][22],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][22],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][22],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[22], BO:Bop|register_n_bits:PC|state[22]      ;
+; BO:Bop|register_n_bits:UlaReg|state[23] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[23], BO:Bop|register_n_bits:RegA|state[23],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][23],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][23],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][23],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][23],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[23], BO:Bop|register_n_bits:PC|state[23]      ;
+; BO:Bop|register_n_bits:UlaReg|state[24] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[24], BO:Bop|register_n_bits:RegA|state[24],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][24],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][24],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][24],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][24],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[24], BO:Bop|register_n_bits:PC|state[24]      ;
+; BO:Bop|register_n_bits:UlaReg|state[25] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[25], BO:Bop|register_n_bits:RegA|state[25],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][25],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][25],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][25],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][25],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[25], BO:Bop|register_n_bits:PC|state[25]      ;
+; BO:Bop|register_n_bits:UlaReg|state[26] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[26], BO:Bop|register_n_bits:RegA|state[26],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][26],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][26],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][26],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][26],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[26], BO:Bop|register_n_bits:PC|state[26]      ;
+; BO:Bop|register_n_bits:UlaReg|state[27] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[27], BO:Bop|register_n_bits:RegA|state[27],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][27],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][27],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][27],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][27],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[27], BO:Bop|register_n_bits:PC|state[27]      ;
+; BO:Bop|register_n_bits:UlaReg|state[28] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[28], BO:Bop|register_n_bits:RegA|state[28],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][28],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][28],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][28],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][28],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[28], BO:Bop|register_n_bits:PC|state[28]      ;
+; BO:Bop|register_n_bits:UlaReg|state[29] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[29], BO:Bop|register_n_bits:RegA|state[29],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][29],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][29],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][29],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][29],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[29], BO:Bop|register_n_bits:PC|state[29]      ;
+; BO:Bop|register_n_bits:UlaReg|state[30] ; Lost Fanouts       ; BO:Bop|register_n_bits:RegB|state[30], BO:Bop|register_n_bits:RegA|state[30],       ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[0][30],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[1][30],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[2][30],                                   ;
+;                                         ;                    ; BO:Bop|registerBank:BancoDeRegs|registers[3][30],                                   ;
+;                                         ;                    ; BO:Bop|register_n_bits:RegDados|state[30], BO:Bop|register_n_bits:PC|state[30]      ;
++-----------------------------------------+--------------------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -394,6 +1667,118 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:Bop|registerBank:BancoDeRegs ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; regwidth       ; 32    ; Signed Integer                                      ;
+; reglength      ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegA ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; width          ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegB ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; width          ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:Bop|signalExtend:extSinal ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; finalwidth     ; 32    ; Signed Integer                                   ;
+; actualwidth    ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:Bop|shiftLeft2:desExt ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; n              ; 32    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:Bop|shiftLeft2:desPC ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; n              ; 28    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:mux21ULA ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; width          ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:Bop|mux4x1nbits:mux41Ula ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; width          ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:Bop|ALU:ULA ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; datawidth      ; 32    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:UlaReg ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; width          ; 32    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BO:Bop|Mux3x1nbits:mux31pc ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; wid            ; 32    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +--------------------------------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                                       ;
 +-------------------------------------------+------------------------------------------------------------+
@@ -414,22 +1799,60 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "BO:Bop|mux2x1nbits:MuxDadoEsc"                                                      ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; outp ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------+
+; Port Connectivity Checks: "BO:Bop|Mux3x1nbits:mux31pc" ;
++-----------+-------+----------+-------------------------+
+; Port      ; Type  ; Severity ; Details                 ;
++-----------+-------+----------+-------------------------+
+; c[31..28] ; Input ; Info     ; Stuck at GND            ;
++-----------+-------+----------+-------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "BO:Bop|mux2x1nbits:MuxRegEsc"                                                       ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; outp ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "BO:Bop|register_n_bits:UlaReg" ;
++----------+-------+----------+-----------------------------+
+; Port     ; Type  ; Severity ; Details                     ;
++----------+-------+----------+-----------------------------+
+; writereg ; Input ; Info     ; Stuck at VCC                ;
++----------+-------+----------+-----------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "BO:Bop|mux4x1nbits:mux41Ula" ;
++--------------+-------+----------+-----------------------+
+; Port         ; Type  ; Severity ; Details               ;
++--------------+-------+----------+-----------------------+
+; inpt1[31..3] ; Input ; Info     ; Stuck at GND          ;
+; inpt1[1..0]  ; Input ; Info     ; Stuck at GND          ;
+; inpt1[2]     ; Input ; Info     ; Stuck at VCC          ;
++--------------+-------+----------+-----------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "BO:Bop|shiftLeft2:desPC" ;
++---------------+-------+----------+------------------+
+; Port          ; Type  ; Severity ; Details          ;
++---------------+-------+----------+------------------+
+; input[27..26] ; Input ; Info     ; Stuck at GND     ;
++---------------+-------+----------+------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "BO:Bop|register_n_bits:RegB" ;
++----------+-------+----------+---------------------------+
+; Port     ; Type  ; Severity ; Details                   ;
++----------+-------+----------+---------------------------+
+; writereg ; Input ; Info     ; Stuck at VCC              ;
++----------+-------+----------+---------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "BO:Bop|register_n_bits:RegA" ;
++----------+-------+----------+---------------------------+
+; Port     ; Type  ; Severity ; Details                   ;
++----------+-------+----------+---------------------------+
+; writereg ; Input ; Info     ; Stuck at VCC              ;
++----------+-------+----------+---------------------------+
 
 
 +-------------------------------------------------------------+
@@ -446,8 +1869,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port      ; Type   ; Severity ; Details                                                                             ;
 +-----------+--------+----------+-------------------------------------------------------------------------------------+
-; q[31..21] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; q[10..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; q[31..26] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -496,7 +1918,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Tue Jun 23 19:16:33 2015
+    Info: Processing started: Tue Jun 23 21:03:47 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MipsMult -c MipsMult
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file BO.vhd
@@ -505,9 +1927,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file BO.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file ALU.vhd
     Info (12022): Found design unit 1: ALU-behavioral
     Info (12023): Found entity 1: ALU
-Info (12021): Found 2 design units, including 1 entities, in source file mux21.vhd
-    Info (12022): Found design unit 1: Mux21-mux
-    Info (12023): Found entity 1: Mux21
 Info (12021): Found 2 design units, including 1 entities, in source file signalExtend.vhd
     Info (12022): Found design unit 1: signalExtend-behavioral
     Info (12023): Found entity 1: signalExtend
@@ -541,6 +1960,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file registe
 Info (12021): Found 2 design units, including 1 entities, in source file adder_n_bits.vhd
     Info (12022): Found design unit 1: adder_n_bits-Behavioral
     Info (12023): Found entity 1: adder_n_bits
+Info (12021): Found 2 design units, including 1 entities, in source file mux3x1.vhd
+    Info (12022): Found design unit 1: Mux3x1nbits-mux
+    Info (12023): Found entity 1: Mux3x1nbits
 Info (12127): Elaborating entity "MipsMult" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at MipsMult.vhd(21): object "opcode" assigned a value but never read
 Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(22): used implicit default value for signal "PCEscCond" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
@@ -558,12 +1980,6 @@ Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(25): used impli
 Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(25): used implicit default value for signal "FontePC" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info (12128): Elaborating entity "BO" for hierarchy "BO:Bop"
 Warning (10541): VHDL Signal Declaration warning at BO.vhd(7): used implicit default value for signal "opcode" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at BO.vhd(45): used implicit default value for signal "or2pc" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at BO.vhd(46): used implicit default value for signal "mux2pc" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at BO.vhd(46): used implicit default value for signal "ulaout" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at BO.vhd(46): used implicit default value for signal "regBout" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at BO.vhd(47): object "muxDadoEscOut" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at BO.vhd(48): object "muxRegEscOut" assigned a value but never read
 Info (12128): Elaborating entity "register_n_bits" for hierarchy "BO:Bop|register_n_bits:PC"
 Info (12128): Elaborating entity "mux2x1nbits" for hierarchy "BO:Bop|mux2x1nbits:MuxMem"
 Info (12128): Elaborating entity "memory_BRAM" for hierarchy "BO:Bop|memory_BRAM:Memoria"
@@ -588,6 +2004,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
     Info (12023): Found entity 1: altsyncram_0rj1
 Info (12128): Elaborating entity "altsyncram_0rj1" for hierarchy "BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component|altsyncram_0rj1:auto_generated"
 Info (12128): Elaborating entity "mux2x1nbits" for hierarchy "BO:Bop|mux2x1nbits:MuxRegEsc"
+Info (12128): Elaborating entity "registerBank" for hierarchy "BO:Bop|registerBank:BancoDeRegs"
+Info (12128): Elaborating entity "signalExtend" for hierarchy "BO:Bop|signalExtend:extSinal"
+Info (12128): Elaborating entity "shiftLeft2" for hierarchy "BO:Bop|shiftLeft2:desExt"
+Info (12128): Elaborating entity "shiftLeft2" for hierarchy "BO:Bop|shiftLeft2:desPC"
+Info (12128): Elaborating entity "mux4x1nbits" for hierarchy "BO:Bop|mux4x1nbits:mux41Ula"
+Info (12128): Elaborating entity "ALUcontrol" for hierarchy "BO:Bop|ALUcontrol:BcUla"
+Info (12128): Elaborating entity "ALU" for hierarchy "BO:Bop|ALU:ULA"
+Info (12128): Elaborating entity "Mux3x1nbits" for hierarchy "BO:Bop|Mux3x1nbits:mux31pc"
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component|altsyncram_0rj1:auto_generated|q_a[0]"
@@ -622,7 +2046,7 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component|altsyncram_0rj1:auto_generated|q_a[29]"
         Warning (14320): Synthesized away node "BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component|altsyncram_0rj1:auto_generated|q_a[30]"
         Warning (14320): Synthesized away node "BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component|altsyncram_0rj1:auto_generated|q_a[31]"
-Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (17049): 1210 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
@@ -631,10 +2055,10 @@ Warning (21074): Design contains 2 input pin(s) that do not drive logic
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 1102 megabytes
-    Info: Processing ended: Tue Jun 23 19:16:51 2015
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:26
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 53 warnings
+    Info: Peak virtual memory: 1108 megabytes
+    Info: Processing ended: Tue Jun 23 21:04:03 2015
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:22
 
 

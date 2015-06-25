@@ -1,5 +1,5 @@
 Fitter report for MipsMult
-Tue Jun 23 21:05:26 2015
+Thu Jun 25 00:50:10 2015
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -56,7 +56,7 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Fitter Summary                                                               ;
 +---------------------------------+--------------------------------------------+
-; Fitter Status                   ; Successful - Tue Jun 23 21:05:26 2015      ;
+; Fitter Status                   ; Successful - Thu Jun 25 00:50:10 2015      ;
 ; Quartus II 64-Bit Version       ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                   ; MipsMult                                   ;
 ; Top-level Entity Name           ; MipsMult                                   ;
@@ -1095,9 +1095,9 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:05
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1955 megabytes
-    Info: Processing ended: Tue Jun 23 21:05:27 2015
-    Info: Elapsed time: 00:01:22
-    Info: Total CPU time (on all processors): 00:01:16
+    Info: Peak virtual memory: 1954 megabytes
+    Info: Processing ended: Thu Jun 25 00:50:11 2015
+    Info: Elapsed time: 00:01:21
+    Info: Total CPU time (on all processors): 00:01:15
 
 

@@ -68,4 +68,5 @@ set_global_assignment -name VHDL_FILE adder_n_bits.vhd
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VHDL_FILE mux3x1.vhd
+set_global_assignment -name VHDL_FILE BC.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

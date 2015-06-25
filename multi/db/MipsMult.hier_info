@@ -1,6 +1,8 @@
 |MipsMult
 clock => BO:Bop.clock
+clock => BC:Bco.clock
 reset => BO:Bop.reset
+reset => BC:Bco.reset
 
 
 |MipsMult|BO:Bop
@@ -6718,5 +6720,32 @@ s[28] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
 s[29] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
 s[30] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 s[31] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MipsMult|BC:Bco
+clock => regSa~1.DATAIN
+reset => regSa~3.DATAIN
+opcode[0] => ~NO_FANOUT~
+opcode[1] => ~NO_FANOUT~
+opcode[2] => ~NO_FANOUT~
+opcode[3] => ~NO_FANOUT~
+opcode[4] => ~NO_FANOUT~
+opcode[5] => ~NO_FANOUT~
+PCEscCond <= PCEscCond.DB_MAX_OUTPUT_PORT_TYPE
+PCEsc <= PCEsc.DB_MAX_OUTPUT_PORT_TYPE
+IouD <= IouD.DB_MAX_OUTPUT_PORT_TYPE
+LerMem <= LerMem.DB_MAX_OUTPUT_PORT_TYPE
+EscMem <= EscMem.DB_MAX_OUTPUT_PORT_TYPE
+MemParaReg <= MemParaReg.DB_MAX_OUTPUT_PORT_TYPE
+IREsc <= IREsc.DB_MAX_OUTPUT_PORT_TYPE
+RegDst <= RegDst.DB_MAX_OUTPUT_PORT_TYPE
+EscReg <= EscReg.DB_MAX_OUTPUT_PORT_TYPE
+ULAFonteA <= ULAFonteA.DB_MAX_OUTPUT_PORT_TYPE
+ULAFonteB[0] <= ULAFonteB[0].DB_MAX_OUTPUT_PORT_TYPE
+ULAFonteB[1] <= ULAFonteB[1].DB_MAX_OUTPUT_PORT_TYPE
+ULAOp[0] <= ULAOp[0].DB_MAX_OUTPUT_PORT_TYPE
+ULAOp[1] <= ULAOp[1].DB_MAX_OUTPUT_PORT_TYPE
+FontePC[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+FontePC[1] <= FontePC[1].DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MipsMult
-Tue Jun 23 21:04:03 2015
+Wed Jun 24 23:14:27 2015
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -13,39 +13,39 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Source assignments for BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component|altsyncram_0rj1:auto_generated
- 12. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:PC
- 13. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:MuxMem
- 14. Parameter Settings for User Entity Instance: BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component
- 15. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegInst
- 16. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegDados
- 17. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:MuxRegEsc
- 18. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:MuxDadoEsc
- 19. Parameter Settings for User Entity Instance: BO:Bop|registerBank:BancoDeRegs
- 20. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegA
- 21. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegB
- 22. Parameter Settings for User Entity Instance: BO:Bop|signalExtend:extSinal
- 23. Parameter Settings for User Entity Instance: BO:Bop|shiftLeft2:desExt
- 24. Parameter Settings for User Entity Instance: BO:Bop|shiftLeft2:desPC
- 25. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:mux21ULA
- 26. Parameter Settings for User Entity Instance: BO:Bop|mux4x1nbits:mux41Ula
- 27. Parameter Settings for User Entity Instance: BO:Bop|ALU:ULA
- 28. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:UlaReg
- 29. Parameter Settings for User Entity Instance: BO:Bop|Mux3x1nbits:mux31pc
- 30. altsyncram Parameter Settings by Entity Instance
- 31. Port Connectivity Checks: "BO:Bop|Mux3x1nbits:mux31pc"
- 32. Port Connectivity Checks: "BO:Bop|register_n_bits:UlaReg"
- 33. Port Connectivity Checks: "BO:Bop|mux4x1nbits:mux41Ula"
- 34. Port Connectivity Checks: "BO:Bop|shiftLeft2:desPC"
- 35. Port Connectivity Checks: "BO:Bop|register_n_bits:RegB"
- 36. Port Connectivity Checks: "BO:Bop|register_n_bits:RegA"
- 37. Port Connectivity Checks: "BO:Bop|register_n_bits:RegDados"
- 38. Port Connectivity Checks: "BO:Bop|register_n_bits:RegInst"
- 39. Port Connectivity Checks: "BO:Bop|mux2x1nbits:MuxMem"
- 40. Port Connectivity Checks: "BO:Bop"
+  8. State Machine - |MipsMult|BC:Bco|regSa
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Source assignments for BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component|altsyncram_0rj1:auto_generated
+ 13. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:PC
+ 14. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:MuxMem
+ 15. Parameter Settings for User Entity Instance: BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component
+ 16. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegInst
+ 17. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegDados
+ 18. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:MuxRegEsc
+ 19. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:MuxDadoEsc
+ 20. Parameter Settings for User Entity Instance: BO:Bop|registerBank:BancoDeRegs
+ 21. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegA
+ 22. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:RegB
+ 23. Parameter Settings for User Entity Instance: BO:Bop|signalExtend:extSinal
+ 24. Parameter Settings for User Entity Instance: BO:Bop|shiftLeft2:desExt
+ 25. Parameter Settings for User Entity Instance: BO:Bop|shiftLeft2:desPC
+ 26. Parameter Settings for User Entity Instance: BO:Bop|mux2x1nbits:mux21ULA
+ 27. Parameter Settings for User Entity Instance: BO:Bop|mux4x1nbits:mux41Ula
+ 28. Parameter Settings for User Entity Instance: BO:Bop|ALU:ULA
+ 29. Parameter Settings for User Entity Instance: BO:Bop|register_n_bits:UlaReg
+ 30. Parameter Settings for User Entity Instance: BO:Bop|Mux3x1nbits:mux31pc
+ 31. altsyncram Parameter Settings by Entity Instance
+ 32. Port Connectivity Checks: "BO:Bop|Mux3x1nbits:mux31pc"
+ 33. Port Connectivity Checks: "BO:Bop|register_n_bits:UlaReg"
+ 34. Port Connectivity Checks: "BO:Bop|mux4x1nbits:mux41Ula"
+ 35. Port Connectivity Checks: "BO:Bop|shiftLeft2:desPC"
+ 36. Port Connectivity Checks: "BO:Bop|register_n_bits:RegB"
+ 37. Port Connectivity Checks: "BO:Bop|register_n_bits:RegA"
+ 38. Port Connectivity Checks: "BO:Bop|register_n_bits:RegDados"
+ 39. Port Connectivity Checks: "BO:Bop|register_n_bits:RegInst"
+ 40. Port Connectivity Checks: "BO:Bop|mux2x1nbits:MuxMem"
  41. Post-Synthesis Netlist Statistics for Top Partition
  42. Elapsed Time Per Partition
  43. Analysis & Synthesis Messages
@@ -75,7 +75,7 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jun 23 21:04:02 2015      ;
+; Analysis & Synthesis Status     ; Successful - Wed Jun 24 23:14:27 2015      ;
 ; Quartus II 64-Bit Version       ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                   ; MipsMult                                   ;
 ; Top-level Entity Name           ; MipsMult                                   ;
@@ -211,6 +211,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; memory_BRAM.vhd                  ; yes             ; User Wizard-Generated File             ; /home/jake/Mips32/multi/memory_BRAM.vhd                                      ;         ;
 ; registerBank.vhd                 ; yes             ; User VHDL File                         ; /home/jake/Mips32/multi/registerBank.vhd                                     ;         ;
 ; mux3x1.vhd                       ; yes             ; User VHDL File                         ; /home/jake/Mips32/multi/mux3x1.vhd                                           ;         ;
+; BC.vhd                           ; yes             ; User VHDL File                         ; /home/jake/Mips32/multi/BC.vhd                                               ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                           ; /home/jake/altera/15.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /home/jake/altera/15.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                           ; /home/jake/altera/15.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
@@ -260,6 +261,25 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; |MipsMult                  ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 2    ; 0            ; |MipsMult           ; work         ;
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |MipsMult|BC:Bco|regSa                                                                                 ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; Name     ; regSa.s9 ; regSa.s8 ; regSa.s7 ; regSa.s6 ; regSa.s5 ; regSa.s4 ; regSa.s3 ; regSa.s2 ; regSa.s1 ; regSa.s0 ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; regSa.s0 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; regSa.s1 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; regSa.s2 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; regSa.s3 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; regSa.s4 ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; regSa.s5 ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; regSa.s6 ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; regSa.s7 ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; regSa.s8 ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; regSa.s9 ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
 
 
 +------------------------------------------------------------------------+
@@ -1297,7 +1317,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; BO:Bop|register_n_bits:RegDados|state[0..31]      ; Lost fanout        ;
 ; BO:Bop|register_n_bits:RegInst|state[0..25]       ; Lost fanout        ;
 ; BO:Bop|register_n_bits:PC|state[0..31]            ; Lost fanout        ;
-; Total Number of Removed Registers = 1210          ;                    ;
+; BC:Bco|regSa.s0                                   ; Lost fanout        ;
+; BC:Bco|regSa.s1                                   ; Lost fanout        ;
+; BC:Bco|regSa.s2                                   ; Lost fanout        ;
+; BC:Bco|regSa.s3                                   ; Lost fanout        ;
+; BC:Bco|regSa.s4                                   ; Lost fanout        ;
+; BC:Bco|regSa.s5                                   ; Lost fanout        ;
+; BC:Bco|regSa.s6                                   ; Lost fanout        ;
+; BC:Bco|regSa.s7                                   ; Lost fanout        ;
+; BC:Bco|regSa.s8                                   ; Lost fanout        ;
+; BC:Bco|regSa.s9                                   ; Lost fanout        ;
+; Total Number of Removed Registers = 1220          ;                    ;
 +---------------------------------------------------+--------------------+
 
 
@@ -1882,15 +1912,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "BO:Bop"                                                                               ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; opcode ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-------------------+---------------------------------+
@@ -1918,7 +1939,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Tue Jun 23 21:03:47 2015
+    Info: Processing started: Wed Jun 24 23:14:07 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MipsMult -c MipsMult
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file BO.vhd
@@ -1963,21 +1984,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file adder_n
 Info (12021): Found 2 design units, including 1 entities, in source file mux3x1.vhd
     Info (12022): Found design unit 1: Mux3x1nbits-mux
     Info (12023): Found entity 1: Mux3x1nbits
+Info (12021): Found 2 design units, including 1 entities, in source file BC.vhd
+    Info (12022): Found design unit 1: BC-Control
+    Info (12023): Found entity 1: BC
 Info (12127): Elaborating entity "MipsMult" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at MipsMult.vhd(21): object "opcode" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(22): used implicit default value for signal "PCEscCond" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(22): used implicit default value for signal "PCEsc" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(22): used implicit default value for signal "IouD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(22): used implicit default value for signal "LerMem" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(22): used implicit default value for signal "EscMem" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(22): used implicit default value for signal "MemParaReg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(22): used implicit default value for signal "IREsc" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(22): used implicit default value for signal "RegDst" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(22): used implicit default value for signal "EscReg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(22): used implicit default value for signal "ULAFonteA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(25): used implicit default value for signal "ULAFonteB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(25): used implicit default value for signal "ULAOp" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at MipsMult.vhd(25): used implicit default value for signal "FontePC" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info (12128): Elaborating entity "BO" for hierarchy "BO:Bop"
 Warning (10541): VHDL Signal Declaration warning at BO.vhd(7): used implicit default value for signal "opcode" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info (12128): Elaborating entity "register_n_bits" for hierarchy "BO:Bop|register_n_bits:PC"
@@ -2012,6 +2022,22 @@ Info (12128): Elaborating entity "mux4x1nbits" for hierarchy "BO:Bop|mux4x1nbits
 Info (12128): Elaborating entity "ALUcontrol" for hierarchy "BO:Bop|ALUcontrol:BcUla"
 Info (12128): Elaborating entity "ALU" for hierarchy "BO:Bop|ALU:ULA"
 Info (12128): Elaborating entity "Mux3x1nbits" for hierarchy "BO:Bop|Mux3x1nbits:mux31pc"
+Info (12128): Elaborating entity "BC" for hierarchy "BC:Bco"
+Warning (10541): VHDL Signal Declaration warning at BC.vhd(8): used implicit default value for signal "PCEscCond" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at BC.vhd(8): used implicit default value for signal "PCEsc" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at BC.vhd(8): used implicit default value for signal "IouD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at BC.vhd(8): used implicit default value for signal "LerMem" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at BC.vhd(8): used implicit default value for signal "EscMem" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at BC.vhd(8): used implicit default value for signal "MemParaReg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at BC.vhd(8): used implicit default value for signal "IREsc" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at BC.vhd(8): used implicit default value for signal "RegDst" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at BC.vhd(8): used implicit default value for signal "EscReg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at BC.vhd(8): used implicit default value for signal "ULAFonteA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at BC.vhd(11): used implicit default value for signal "ULAFonteB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at BC.vhd(11): used implicit default value for signal "ULAOp" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at BC.vhd(11): used implicit default value for signal "FontePC" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at BC.vhd(17): object "regSa" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at BC.vhd(17): used implicit default value for signal "regPs" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component|altsyncram_0rj1:auto_generated|q_a[0]"
@@ -2046,7 +2072,7 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component|altsyncram_0rj1:auto_generated|q_a[29]"
         Warning (14320): Synthesized away node "BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component|altsyncram_0rj1:auto_generated|q_a[30]"
         Warning (14320): Synthesized away node "BO:Bop|memory_BRAM:Memoria|altsyncram:altsyncram_component|altsyncram_0rj1:auto_generated|q_a[31]"
-Info (17049): 1210 registers lost all their fanouts during netlist optimizations.
+Info (17049): 1220 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
@@ -2055,10 +2081,10 @@ Warning (21074): Design contains 2 input pin(s) that do not drive logic
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 53 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 54 warnings
     Info: Peak virtual memory: 1108 megabytes
-    Info: Processing ended: Tue Jun 23 21:04:03 2015
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Processing ended: Wed Jun 24 23:14:27 2015
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:26
 
 

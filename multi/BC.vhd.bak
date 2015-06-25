@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity BO is
+	port(
+		clock, reset: in std_logic;
+		opcode: in std_logic_vector(5 downto 0);
+		PCEscCond, PCEsc, IouD, LerMem,
+		EscMem, MemParaReg, IREsc,
+		RegDst, EscReg, ULAFonteA: out std_logic;
+		ULAFonteB, ULAOp, FontePC: out std_logic_vector(1 downto 0)
+	);
+end;

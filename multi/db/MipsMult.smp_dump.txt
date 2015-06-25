@@ -1,0 +1,13 @@
+
+State Machine - |MipsMult|BC:Bco|regSa
+Name regSa.s9 regSa.s8 regSa.s7 regSa.s6 regSa.s5 regSa.s4 regSa.s3 regSa.s2 regSa.s1 regSa.s0 
+regSa.s0 0 0 0 0 0 0 0 0 0 0 
+regSa.s1 0 0 0 0 0 0 0 0 1 1 
+regSa.s2 0 0 0 0 0 0 0 1 0 1 
+regSa.s3 0 0 0 0 0 0 1 0 0 1 
+regSa.s4 0 0 0 0 0 1 0 0 0 1 
+regSa.s5 0 0 0 0 1 0 0 0 0 1 
+regSa.s6 0 0 0 1 0 0 0 0 0 1 
+regSa.s7 0 0 1 0 0 0 0 0 0 1 
+regSa.s8 0 1 0 0 0 0 0 0 0 1 
+regSa.s9 1 0 0 0 0 0 0 0 0 1 

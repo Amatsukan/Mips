@@ -11,13 +11,25 @@ architecture MipsM of MipsMult is
 	component BO is
 		port(
 			clock, reset: in std_logic;
-			opcode: out std_logic_vector(5 downto 0);
+			opcode: buffer std_logic_vector(5 downto 0);
 			PCEscCond, PCEsc, IouD, LerMem,
 			EscMem, MemParaReg, IREsc,
 			RegDst, EscReg, ULAFonteA: in std_logic;
 			ULAFonteB, ULAOp, FontePC: in std_logic_vector(1 downto 0)
 		);
 	end component;
+	
+	component BC is
+		port(
+			clock, reset: in std_logic;
+			opcode: in std_logic_vector(5 downto 0);
+			PCEscCond, PCEsc, IouD, LerMem,
+			EscMem, MemParaReg, IREsc,
+			RegDst, EscReg, ULAFonteA: out std_logic;
+			ULAFonteB, ULAOp, FontePC: out std_logic_vector(1 downto 0)
+		);
+	end component;
+	
 	signal opcode: std_logic_vector(5 downto 0);
 	signal PCEscCond, PCEsc, IouD, LerMem,
 			EscMem, MemParaReg, IREsc,
@@ -26,9 +38,12 @@ architecture MipsM of MipsMult is
 	
 begin
 
-Bop : BO port map(
+	Bop : BO port map(
 		clock, reset, opcode, PCEscCond, PCEsc, IouD, LerMem, EscMem, MemParaReg, IREsc, RegDst, EscReg, ULAFonteA,
 		ULAFonteB, ULAOp, FontePC
-);
-
+	);
+	Bco : BC port map(
+		clock, reset, opcode, PCEscCond, PCEsc, IouD, LerMem, EscMem, MemParaReg, IREsc, RegDst, EscReg, ULAFonteA,
+		ULAFonteB, ULAOp, FontePC
+	);
 end architecture;
